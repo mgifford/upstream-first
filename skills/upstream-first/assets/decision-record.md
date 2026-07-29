@@ -22,6 +22,12 @@
 - Evidence:
 - Confidence:
 
+## Engagement path
+
+- Selected path:
+- Receiving-project rule:
+- Why this level of maintainer engagement is appropriate:
+
 ## Option assessment
 
 | Rank | Option | Viable | Evidence, gaps, and risks |
@@ -48,5 +54,6 @@
 - Upstream action:
 - Local action:
 - Temporary-workaround expiry:
+- Upstream-debt record:
 - Unresolved questions:
 - Human approval required before external action: Yes

@@ -10,6 +10,12 @@ versions, reproduction details, impact, and suggested mitigations.
 
 If private reporting is unavailable, contact a maintainer through an already
 published private organizational channel. Do not invent or guess an address.
+Projects may also publish contact and policy information through
+[RFC 9116 `security.txt`](https://www.rfc-editor.org/rfc/rfc9116.html).
+
+Use
+[`responsible-security-disclosure`](skills/responsible-security-disclosure/SKILL.md)
+to prepare a report. That skill does not authorize testing or submission.
 
 ## Supported versions
 
@@ -29,6 +35,8 @@ will publish a supported-version table.
 - Verify generated package names, APIs, links, citations, and license claims.
 - Keep vulnerability details private until coordinated disclosure permits
   publication.
+- Do not expose embargoed details in branch names, commit messages, public
+  forks, logs, or upstream-debt annotations.
 
 The project uses OpenSSF guidance as informative practice. Passing an automated
 score does not establish security.

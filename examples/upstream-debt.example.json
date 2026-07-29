@@ -1,0 +1,27 @@
+{
+  "registry_version": "0.1.0",
+  "records": [
+    {
+      "id": "UF-0042",
+      "classification": "temporary-workaround",
+      "visibility": "public",
+      "locations": [
+        "skills/upstream-first/SKILL.md"
+      ],
+      "owner": "Application maintenance team",
+      "reason": "A production accessibility barrier cannot wait for the dependency release.",
+      "upstream_reference": "https://example.org/project/issues/123",
+      "exception_reason": null,
+      "introduced_on": "2026-07-29",
+      "review_by": "2026-08-28",
+      "supported_versions": [
+        "dependency 4.2"
+      ],
+      "removal_condition": "A supported dependency release includes the fix and passes regression testing.",
+      "migration": "Remove the local patch, upgrade the dependency, and rerun keyboard and screen-reader tests.",
+      "rollback": "Restore the previous dependency lock and patch if the supported upgrade regresses the interaction.",
+      "status": "upstream-open",
+      "human_approval_required": true
+    }
+  ]
+}

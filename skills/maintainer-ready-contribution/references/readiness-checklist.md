@@ -14,6 +14,9 @@
 - Identify affected people and tasks.
 - Link specifications, documentation, tests, and prior decisions.
 - Remove private data and unrelated logs.
+- Include an automated regression test when feasible and project-supported.
+- If automation is omitted, explain why and provide appropriate manual,
+  visual, or documentary evidence.
 
 ## Change
 

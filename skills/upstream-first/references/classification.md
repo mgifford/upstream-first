@@ -33,3 +33,13 @@ Configure, report, contribute non-code evidence, patch upstream, extend,
 create, apply a temporary workaround, implement locally, or stop.
 
 The receiving project owns its final labels and product boundary.
+
+## Temporary workaround
+
+Give each downstream divergence a stable upstream-debt identifier. Record its
+locations, owner, upstream reference or exception, introduction and review
+dates, supported versions, removal condition, migration, and rollback.
+
+Use a public `UPSTREAM-DEBT: UF-####` source annotation only for non-security
+work. Keep embargoed security records and revealing references
+access-controlled.

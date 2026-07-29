@@ -32,7 +32,8 @@ Record missing, conflicting, or ambiguous requirements.
 
 If the project prohibits the relevant AI use, stop producing contribution
 content within that scope. If the issue is a vulnerability, use the private
-security process and do not prepare a public issue.
+security process, hand off to `responsible-security-disclosure`, and do not
+prepare a public issue.
 
 ### 3. Choose the smallest useful contribution
 
@@ -50,6 +51,8 @@ Ask maintainers before substantial features, architectural work, new
 dependencies, standards changes, or broad refactoring.
 
 Do not assume code is the most useful contribution.
+Follow the engagement path selected by `upstream-first`. Do not infer that a
+small accessibility change is necessarily low-risk.
 
 ### 4. Establish evidence
 
@@ -66,7 +69,10 @@ Include:
 - uncertainty and alternative explanations.
 
 For accessibility issues, identify user impact and combine automated and manual
-evidence. For regressions, prefer a failing test when feasible.
+evidence. For regressions, prefer a failing test when feasible. Require evidence
+appropriate to the contribution type. When an automated regression test is not
+feasible or supported, explain why and provide a minimal manual or visual test
+case. Visual tests alone do not establish accessibility.
 
 ### 5. Prepare the change
 
@@ -78,6 +84,11 @@ invented dependencies, generated verbosity, and duplicate documentation.
 
 Run deterministic tests and checks available to the contributor. Never claim a
 test was run when it was not.
+
+For Git-based cross-repository work, read
+[cross-repository-git.md](references/cross-repository-git.md). Discover remotes,
+the target branch, and the release process before proposing commands. Never
+hardcode `main`, `master`, or `develop`.
 
 ### 6. Prepare maintainer context
 

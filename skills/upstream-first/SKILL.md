@@ -52,6 +52,10 @@ data. Read [classification.md](references/classification.md) for edge cases.
 Treat the classification as provisional until the responsible project confirms
 it.
 
+If the nature is a suspected security vulnerability, stop the public
+contribution path and hand off to `responsible-security-disclosure`. Do not
+create a public reproduction, issue, branch, fork, or pull request.
+
 ### 4. Evaluate options in order
 
 Evaluate:
@@ -70,7 +74,24 @@ Do not use popularity or an arbitrary percentage as proof of suitability.
 Reject a higher-ranked option when its material gaps or risks make it
 unacceptable.
 
-### 5. Apply gates
+### 5. Select the engagement path
+
+When upstream work is viable, choose the lowest-friction path permitted by the
+receiving project:
+
+- direct pull request for narrow, reproducible, low-risk work;
+- issue first when ownership, expected behaviour, impact, or approach is
+  uncertain;
+- design proposal first for public APIs, architecture, data models,
+  dependencies, interoperability, governance, or standards;
+- confidential reporting for suspected vulnerabilities;
+- downstream ownership for confirmed instance-specific needs;
+- break-glass workaround for urgent mitigation.
+
+Read [contribution-pathways.md](references/contribution-pathways.md). A change
+label such as accessibility or documentation does not determine risk by itself.
+
+### 6. Apply gates
 
 Assess:
 
@@ -84,26 +105,29 @@ Assess:
 
 Read [quality-gates.md](references/quality-gates.md) when any gate is material.
 
-### 6. Choose and justify
+### 7. Choose and justify
 
 Choose the highest viable option. If choosing local code, state why every
 higher option is unsuitable.
 
-For an urgent temporary workaround, require:
+For an urgent temporary workaround, follow
+[break-glass.md](references/break-glass.md). Require a structured debt record,
+an upstream reference or documented exception, a downstream owner, risk-based
+review date, supported versions, removal condition, migration, and rollback.
+Use restricted records for embargoed security mitigations.
 
-- an upstream issue or recorded reason it cannot be public;
-- downstream owner;
-- introduced and review dates;
-- supported versions;
-- removal condition;
-- migration and rollback path.
+For CI design, read [automation.md](references/automation.md). Apply the
+portable debt checks directly and implement repository-specific duplication,
+hardcoding, token, query, or bundle checks with the receiving project's native
+linters.
 
-### 7. Produce the decision record
+### 8. Produce the decision record
 
 Use [decision-record.md](assets/decision-record.md). Include:
 
 - discovery summary;
 - issue, ownership, and disposition classifications;
+- selected engagement path;
 - options 1 through 6 with evidence;
 - gate findings;
 - recommendation and confidence;
@@ -112,8 +136,10 @@ Use [decision-record.md](assets/decision-record.md). Include:
 - human approval required before external action.
 
 If an upstream contribution is viable, hand off to
-`maintainer-ready-contribution`. If AI materially assisted the work, run
-`ai-contribution-review` before submission.
+`maintainer-ready-contribution`. If the issue may be a vulnerability, hand off
+to `responsible-security-disclosure` instead. If AI materially assisted the
+work, run `ai-contribution-review` before submission when the receiving
+project permits that use.
 
 ## Guardrails
 
@@ -124,6 +150,8 @@ If an upstream contribution is viable, hand off to
 - Do not bypass accessibility, security, privacy, or license requirements for
   schedule reasons.
 - Do not expose suspected vulnerabilities publicly.
+- Do not automatically create an upstream issue, pull request, or security
+  report.
 - Do not use AI where the receiving project prohibits the relevant use.
 
 ## Completion check
@@ -133,6 +161,7 @@ Complete only when:
 - controlling policies were checked or their absence recorded;
 - issue nature, ownership, and disposition are separate;
 - every option in the hierarchy has a reasoned result;
+- the engagement path follows receiving-project policy and change risk;
 - all quality gates are explicit;
 - temporary divergence has an expiry path;
 - external action remains subject to human approval.

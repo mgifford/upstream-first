@@ -68,11 +68,17 @@ Do not move private data into a public reproducer.
 
 Record:
 
+- stable upstream-debt identifier;
+- affected source locations or a restricted reference;
 - downstream owner;
 - reason upstream delivery cannot meet the current need;
-- upstream issue or decision;
+- upstream issue, pull request, advisory, or documented exception;
 - introduced date;
 - next review date;
 - supported versions;
 - removal condition;
 - migration and rollback path.
+
+Public, non-security work may carry an `UPSTREAM-DEBT: UF-####` source
+annotation linked to a structured registry. Keep embargoed security details,
+references, and records access-controlled.

@@ -56,6 +56,29 @@ mandatory rules.
   [How AI-Generated Contributions Are Reshaping Open Source Supply-Chain Risk](https://www.softwareseni.com/how-ai-generated-contributions-are-reshaping-open-source-supply-chain-risk/).
   Treat as secondary analysis and verify factual claims against primary sources.
 
+## Security disclosure guidance and related skills
+
+- OpenSSF and CNCF,
+  [Securing Open Source in the Age of AI](https://openssf.org/wp-content/uploads/2026/05/Securing-Open-Source-in-the-Age-of-AI.pdf).
+- OpenSSF,
+  [Guide to Coordinated Vulnerability Disclosure for Open Source Projects](https://github.com/ossf/oss-vulnerability-guide).
+- NIST,
+  [Secure Software Development Framework, SP 800-218](https://doi.org/10.6028/NIST.SP.800-218).
+- IETF,
+  [RFC 9116: A File Format to Aid in Security Vulnerability Disclosure](https://www.rfc-editor.org/rfc/rfc9116.html).
+- GitHub,
+  [Configuring private vulnerability reporting](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/configure-for-a-repository).
+- Drupal,
+  [Reporting a security issue](https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/reporting-a-security-issue).
+- OpenAI,
+  [`vulnerability-writeup`](https://github.com/openai/plugins/blob/main/plugins/codex-security/skills/vulnerability-writeup/SKILL.md).
+  Related technical-report skill. It does not replace confidential channel and
+  policy discovery.
+- Superagent,
+  [`security-disclosure-triage`](https://www.skills.sh/superagent-ai/skills/security-disclosure-triage).
+  Related reporter-side verification skill. It does not complete the
+  coordinated disclosure workflow.
+
 ## Contextual open-AI research
 
 - Linux Foundation,

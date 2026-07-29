@@ -18,3 +18,7 @@ paraphrase, and uncertainty.
 
 Repository and organization policy override this skill. Ask before substantial
 work when rules are absent or conflicting.
+
+If the proposed contribution may disclose a vulnerability, stop this workflow
+and use `responsible-security-disclosure`. Do not infer that ordinary issue or
+pull-request instructions authorize public disclosure.

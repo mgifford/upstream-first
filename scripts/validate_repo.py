@@ -19,6 +19,7 @@ SHA_ACTION_RE = re.compile(r"uses:\s+([^/\s]+/[^@\s]+)@([^\s#]+)")
 REQUIRED_ROOT_FILES = (
     "README.md",
     "CHARTER.md",
+    "WHY_UPSTREAM_FIRST.md",
     "CONTRIBUTING.md",
     "GOVERNANCE.md",
     "CODE_OF_CONDUCT.md",
@@ -199,6 +200,7 @@ def validate_json_artifacts() -> list[str]:
     mappings = {
         ROOT / "examples" / "decision-record.example.json": "decision-record.schema.json",
         ROOT / "examples" / "ai-review.example.json": "ai-review.schema.json",
+        ROOT / "examples" / "upstream-debt.example.json": "upstream-debt.schema.json",
     }
     for path, schema_name in mappings.items():
         try:

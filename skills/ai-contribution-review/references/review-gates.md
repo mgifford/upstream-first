@@ -36,6 +36,9 @@
 - Preserve authentication and authorization boundaries.
 - Validate untrusted input and generated commands.
 - Verify new dependencies and supply-chain claims.
+- Route suspected vulnerabilities through `responsible-security-disclosure`.
+- Keep embargoed details out of public review artifacts and AI-assistance
+  disclosures.
 
 ## License and provenance
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Responsible Security Disclosure"
+  short_description: "Prepare confidential vulnerability reports safely"
+  default_prompt: "Use $responsible-security-disclosure to verify and prepare this suspected vulnerability for the correct private reporting process."

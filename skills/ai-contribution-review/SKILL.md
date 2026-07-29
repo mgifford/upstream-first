@@ -95,6 +95,10 @@ limitations.
 Do not expose private prompts, confidential data, or security details merely to
 prove disclosure.
 
+If the material under review may describe an undisclosed vulnerability, stop
+the public review path and use `responsible-security-disclosure`. Apply any AI
+restrictions in the security policy before placing evidence in an AI system.
+
 ### 6. Select an outcome
 
 Use one:

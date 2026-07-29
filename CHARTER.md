@@ -27,6 +27,7 @@ The project covers:
 - documentation, tests, translations, design, standards, issue triage, and
   other non-code contributions;
 - upstream issues, design proposals, patches, and pull requests;
+- confidential vulnerability reports and coordinated disclosure handoffs;
 - temporary downstream workarounds with an explicit upstream and retirement
   path;
 - known or disclosed AI-assisted contributions.
@@ -85,8 +86,9 @@ policies, reproductions, tests, and prior decisions. Mark uncertainty.
 
 ### 4.8 Temporary divergence must expire
 
-A downstream workaround must identify its upstream record, owner, review date,
-removal condition, and migration path.
+A downstream workaround must identify its upstream record or documented
+exception, owner, review date, removal condition, and migration path. Security
+mitigations use restricted records while disclosure is embargoed.
 
 ### 4.9 Quality gates are not cosmetic
 
@@ -97,6 +99,13 @@ findings can disqualify an otherwise convenient solution.
 
 The goal is not higher pull-request volume. The goal is useful, accepted work
 and contributors who can participate, learn, and take responsibility.
+
+### 4.11 Security uses confidential upstream channels
+
+Suspected vulnerabilities do not enter the ordinary issue or pull-request
+path. Follow the receiving project's private reporting and coordinated
+disclosure process. Do not expose embargoed details through public branches,
+commits, issue trackers, or debt annotations.
 
 ## 5. Decision hierarchy
 
@@ -130,7 +139,7 @@ the responsible maintainer or the user.
 
 The initial project delivers:
 
-- three independently installable skills;
+- four independently installable skills;
 - reusable issue, patch, and review templates;
 - machine-readable decision and review schemas;
 - representative evaluation cases;
@@ -159,7 +168,7 @@ Do not use raw issue or pull-request volume as a success measure.
 ## 9. Release policy
 
 Use Semantic Versioning after a public interface is declared. During `0.x`,
-document breaking changes. A `1.0.0` release means the three output contracts,
+document breaking changes. A `1.0.0` release means the four output contracts,
 policy precedence, and evaluation format are stable.
 
 Review the standards registry at least every 90 days and before each minor or

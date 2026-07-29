@@ -16,6 +16,10 @@
 - Minimize personal data collection, retention, and model disclosure.
 - Reject hardcoded secrets, weak authentication, unsafe command construction,
   or unnecessary tracking.
+- If a finding may be a vulnerability, stop public contribution work and use
+  `responsible-security-disclosure`.
+- Keep embargoed details out of public issues, branches, forks, commits,
+  source annotations, logs, and AI disclosures.
 
 ## License and provenance
 

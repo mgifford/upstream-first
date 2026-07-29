@@ -13,6 +13,18 @@ maintenance.
 4. Open a design issue before substantial, cross-skill, or breaking work.
 5. Use a private security report for suspected vulnerabilities.
 
+Use the contribution pathway that matches the change:
+
+- direct pull request for small, well-understood changes when policy permits;
+- issue first for behavioural changes, uncertain scope, or maintainer agreement;
+- design proposal first for architectural, governance, or breaking changes;
+- confidential report for suspected vulnerabilities;
+- a structured break-glass record for urgent downstream mitigations.
+
+See the
+[contribution pathways](skills/upstream-first/references/contribution-pathways.md)
+and [cross-repository Git guidance](skills/maintainer-ready-contribution/references/cross-repository-git.md).
+
 ## Classify the change
 
 State:
@@ -72,3 +84,5 @@ claim depends on it. See [references/STANDARDS.md](references/STANDARDS.md).
 - [ ] Material AI assistance is disclosed when required.
 - [ ] The contributor can explain and maintain the work.
 - [ ] No confidential information, credentials, or personal data are included.
+- [ ] Any temporary downstream divergence has an upstream-debt record, owner,
+      review date, removal condition, and migration path.

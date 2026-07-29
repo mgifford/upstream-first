@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/upstream-first/ai-review.schema.json",
+  "$id": "https://raw.githubusercontent.com/mgifford/upstream-first/main/schemas/ai-review.schema.json",
   "title": "AI Contribution Review",
   "type": "object",
   "additionalProperties": false,

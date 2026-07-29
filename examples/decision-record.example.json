@@ -24,6 +24,7 @@
     ],
     "confidence": "confirmed"
   },
+  "engagement_path": "issue-first",
   "options": [
     {"rank": 1, "option": "Installed capability", "viable": false, "reason": "No supported configuration restores keyboard activation."},
     {"rank": 2, "option": "Existing API or extension point", "viable": false, "reason": "The public event hook runs after the failed interaction."},
@@ -50,11 +51,17 @@
     "open_questions": ["Which supported release branch will accept the fix?"]
   },
   "temporary_workaround": {
+    "upstream_debt_id": "UF-1001",
+    "visibility": "public",
     "owner": "Application maintenance team",
+    "upstream_reference": "https://example.org/dependency/issues/123",
+    "exception_reason": null,
     "introduced": "2026-07-29",
     "review_date": "2026-08-29",
+    "supported_versions": ["dependency 4.2"],
     "removal_condition": "A supported dependency release includes the fix.",
-    "migration": "Remove the patch, upgrade the dependency, and rerun keyboard regression tests."
+    "migration": "Remove the patch, upgrade the dependency, and rerun keyboard regression tests.",
+    "rollback": "Revert the narrow local patch and restore the last supported dependency configuration."
   },
   "human_approval_required": true
 }

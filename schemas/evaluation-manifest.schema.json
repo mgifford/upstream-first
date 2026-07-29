@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/upstream-first/evaluation-manifest.schema.json",
+  "$id": "https://raw.githubusercontent.com/mgifford/upstream-first/main/schemas/evaluation-manifest.schema.json",
   "title": "Skill Evaluation Manifest",
   "type": "object",
   "additionalProperties": false,
@@ -8,7 +8,12 @@
   "properties": {
     "manifest_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "skill": {
-      "enum": ["upstream-first", "maintainer-ready-contribution", "ai-contribution-review"]
+      "enum": [
+        "upstream-first",
+        "maintainer-ready-contribution",
+        "ai-contribution-review",
+        "responsible-security-disclosure"
+      ]
     },
     "cases": {
       "type": "array",
@@ -27,7 +32,18 @@
           "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
           "prompt": {"type": "string", "minLength": 1},
           "expected_outcome": {
-            "enum": ["pass", "revise", "ask-maintainer", "do-not-submit", "local-with-record"]
+            "enum": [
+              "pass",
+              "revise",
+              "ask-maintainer",
+              "do-not-submit",
+              "local-with-record",
+              "report-ready",
+              "needs-verification",
+              "route-to-incident-response",
+              "non-security-route-after-consent",
+              "blocked-no-channel"
+            ]
           },
           "required_behaviors": {
             "type": "array",

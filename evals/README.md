@@ -20,3 +20,7 @@ For forward evaluation:
 6. Rerun from a fresh context.
 
 Do not show the expected outcome or behaviour lists to the agent under test.
+
+Security evaluations must use fictional or already-public scenarios. Do not
+place real secrets, personal data, private source, or embargoed vulnerability
+details in evaluation prompts or stored responses.
