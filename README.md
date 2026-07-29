@@ -43,8 +43,7 @@ The skills follow the
 [Agent Skills specification](https://agentskills.io/specification/) and use the
 standard `skills/<skill-name>/SKILL.md` layout.
 
-After this repository is published, a named skill can be installed with a
-compatible client. For example:
+A named skill can be installed with a compatible client. For example:
 
 ```bash
 npx skills add mgifford/upstream-first --skill upstream-first
@@ -89,3 +88,5 @@ disclosure decisions.
 
 The review draft uses the [MIT License](LICENSE) to permit broad reuse and
 adaptation.
+
+[![skills.sh](https://skills.sh/b/mgifford/upstream-first)](https://skills.sh/mgifford/upstream-first)
