@@ -1,0 +1,41 @@
+{
+  "record_version": "0.1.0",
+  "project": "example/project",
+  "contribution_type": "code",
+  "known_ai_assistance": {
+    "known": true,
+    "activities": ["code generation", "test drafting"],
+    "tool": "Example coding assistant"
+  },
+  "policy": [
+    {
+      "source": "https://example.org/project/AI_POLICY",
+      "activity": "code generation",
+      "state": "permitted-with-disclosure",
+      "requirement": "Disclose material AI assistance and confirm human review."
+    }
+  ],
+  "human_accountability": {
+    "final_work_reviewed": true,
+    "material_choices_understood": true,
+    "claims_verified": true,
+    "available_for_revision": true
+  },
+  "gates": {
+    "fit_scope": "One confirmed bug with no unrelated refactoring.",
+    "correctness_tests": "Regression test failed before the change and passed after it.",
+    "accessibility": "No user-interface change; existing accessibility tests pass.",
+    "security_privacy": "No private data, credentials, or authorization changes.",
+    "license_provenance": "Dependencies and copied material were checked; no new dependency.",
+    "standards_compatibility": "No public interface or standard version changes.",
+    "sustainability_review_burden": "The diff is focused and deterministic checks replace further model review.",
+    "disclosure": "Required tool, uses, and human verification are included."
+  },
+  "outcome": {
+    "decision": "pass",
+    "required_changes": [],
+    "optional_suggestions": [],
+    "open_questions": []
+  },
+  "human_approval_required": true
+}

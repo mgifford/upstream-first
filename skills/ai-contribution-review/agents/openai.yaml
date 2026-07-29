@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Contribution Review"
+  short_description: "Review AI-assisted work before submission"
+  default_prompt: "Use $ai-contribution-review to check this AI-assisted contribution against project policy."

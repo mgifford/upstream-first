@@ -1,0 +1,47 @@
+name: Bug report
+description: Report reproducible behaviour that conflicts with an expectation.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use private vulnerability reporting for security issues.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: State the observed behaviour concisely.
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected people and tasks
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include steps, versions, and the smallest relevant configuration.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour and evidence
+      description: Link a specification, test, documentation, or prior decision.
+    validations:
+      required: true
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing
+      description: List automated and manual checks actually performed.
+  - type: textarea
+    id: ai
+    attributes:
+      label: Material AI assistance
+      description: Identify tool, use, human verification, and limitations when applicable.

@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/upstream-first/decision-record.schema.json",
+  "title": "Upstream First Decision Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_version",
+    "intent",
+    "policy_sources",
+    "classification",
+    "options",
+    "gates",
+    "recommendation",
+    "human_approval_required"
+  ],
+  "properties": {
+    "record_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "affected_people", "platform", "constraints"],
+      "properties": {
+        "outcome": {"type": "string", "minLength": 1},
+        "affected_people": {"type": "array", "items": {"type": "string"}},
+        "platform": {"type": "string", "minLength": 1},
+        "constraints": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "policy_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "scope", "requirement", "checked"],
+        "properties": {
+          "source": {"type": "string", "minLength": 1},
+          "scope": {"type": "string", "minLength": 1},
+          "requirement": {"type": "string", "minLength": 1},
+          "checked": {"type": "string", "format": "date"}
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nature", "ownership", "disposition", "evidence", "confidence"],
+      "properties": {
+        "nature": {
+          "enum": [
+            "bug",
+            "feature",
+            "design-question",
+            "security",
+            "accessibility-defect",
+            "maintenance",
+            "instance-issue",
+            "support-question"
+          ]
+        },
+        "ownership": {
+          "enum": ["instance", "integration", "dependency", "ecosystem", "ambiguous"]
+        },
+        "disposition": {
+          "enum": [
+            "configure",
+            "report",
+            "contribute",
+            "extend",
+            "create",
+            "temporary-workaround",
+            "local",
+            "stop"
+          ]
+        },
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"enum": ["confirmed", "probable", "ambiguous", "not-reproduced"]}
+      }
+    },
+    "options": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rank", "option", "viable", "reason"],
+        "properties": {
+          "rank": {"type": "integer", "minimum": 1, "maximum": 6},
+          "option": {"type": "string", "minLength": 1},
+          "viable": {"type": "boolean"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accessibility",
+        "security_privacy",
+        "license_provenance",
+        "sustainability",
+        "standards"
+      ],
+      "properties": {
+        "accessibility": {"type": "string", "minLength": 1},
+        "security_privacy": {"type": "string", "minLength": 1},
+        "license_provenance": {"type": "string", "minLength": 1},
+        "sustainability": {"type": "string", "minLength": 1},
+        "standards": {"type": "string", "minLength": 1}
+      }
+    },
+    "recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_rank", "justification", "next_actions", "open_questions"],
+      "properties": {
+        "selected_rank": {"type": "integer", "minimum": 1, "maximum": 6},
+        "justification": {"type": "string", "minLength": 1},
+        "next_actions": {"type": "array", "items": {"type": "string"}},
+        "open_questions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "temporary_workaround": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["owner", "introduced", "review_date", "removal_condition", "migration"],
+      "properties": {
+        "owner": {"type": "string", "minLength": 1},
+        "introduced": {"type": "string", "format": "date"},
+        "review_date": {"type": "string", "format": "date"},
+        "removal_condition": {"type": "string", "minLength": 1},
+        "migration": {"type": "string", "minLength": 1}
+      }
+    },
+    "human_approval_required": {"const": true}
+  }
+}

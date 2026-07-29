@@ -1,0 +1,60 @@
+{
+  "record_version": "0.1.0",
+  "intent": {
+    "outcome": "Restore keyboard operation for a menu supplied by a supported dependency.",
+    "affected_people": ["Keyboard users", "Screen-reader users"],
+    "platform": "Web application using dependency 4.2",
+    "constraints": ["Production mitigation needed within five business days"]
+  },
+  "policy_sources": [
+    {
+      "source": "https://example.org/project/CONTRIBUTING",
+      "scope": "Dependency repository",
+      "requirement": "Open an issue before a behavioural pull request.",
+      "checked": "2026-07-29"
+    }
+  ],
+  "classification": {
+    "nature": "accessibility-defect",
+    "ownership": "dependency",
+    "disposition": "temporary-workaround",
+    "evidence": [
+      "Reproduces in the supported example application.",
+      "Keyboard activation contradicts the component documentation."
+    ],
+    "confidence": "confirmed"
+  },
+  "options": [
+    {"rank": 1, "option": "Installed capability", "viable": false, "reason": "No supported configuration restores keyboard activation."},
+    {"rank": 2, "option": "Existing API or extension point", "viable": false, "reason": "The public event hook runs after the failed interaction."},
+    {"rank": 3, "option": "Existing maintained package", "viable": false, "reason": "Replacing the dependency exceeds the incident timeline and adds migration risk."},
+    {"rank": 4, "option": "Upstream improvement", "viable": true, "reason": "The defect reproduces in the maintained dependency and a focused regression test is feasible."},
+    {"rank": 5, "option": "New reusable package", "viable": false, "reason": "A wrapper would duplicate and obscure dependency behaviour."},
+    {"rank": 6, "option": "Local implementation", "viable": true, "reason": "A narrow temporary patch can mitigate impact until an upstream release is available."}
+  ],
+  "gates": {
+    "accessibility": "The current behaviour blocks keyboard operation; manual keyboard and screen-reader tests are required.",
+    "security_privacy": "No new data flow or authorization boundary.",
+    "license_provenance": "The proposed test and patch are original and compatible with the dependency license.",
+    "sustainability": "A wrapper is rejected; the temporary patch has a removal condition.",
+    "standards": "Expected behaviour is assessed against WCAG 2.2 and the component's documented keyboard contract."
+  },
+  "recommendation": {
+    "selected_rank": 4,
+    "justification": "Contribute a regression test and focused fix upstream while applying a time-limited downstream patch.",
+    "next_actions": [
+      "Open the required upstream issue after human approval.",
+      "Apply the local patch with an owner and review date.",
+      "Remove the patch after a fixed upstream release is deployed."
+    ],
+    "open_questions": ["Which supported release branch will accept the fix?"]
+  },
+  "temporary_workaround": {
+    "owner": "Application maintenance team",
+    "introduced": "2026-07-29",
+    "review_date": "2026-08-29",
+    "removal_condition": "A supported dependency release includes the fix.",
+    "migration": "Remove the patch, upgrade the dependency, and rerun keyboard regression tests."
+  },
+  "human_approval_required": true
+}

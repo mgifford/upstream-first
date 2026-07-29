@@ -1,0 +1,47 @@
+name: Feature or design request
+description: Propose a new capability or intentional behaviour change.
+title: "[Proposal]: "
+labels:
+  - proposal
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome and affected users
+      description: Describe the need without assuming an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Current behaviour and gap
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Existing capabilities and alternatives
+      description: Include configuration, extension points, packages, and no-change options.
+    validations:
+      required: true
+  - type: textarea
+    id: standards
+    attributes:
+      label: Standards and compatibility
+      description: Identify exact versions when the proposal depends on a standard.
+  - type: textarea
+    id: impact
+    attributes:
+      label: Accessibility, security, privacy, and sustainability
+    validations:
+      required: true
+  - type: textarea
+    id: maintenance
+    attributes:
+      label: Contribution and maintenance
+      description: Who can implement, review, document, release, and maintain this?
+  - type: textarea
+    id: ai
+    attributes:
+      label: Material AI assistance
+      description: Identify tool, use, human verification, and limitations when applicable.

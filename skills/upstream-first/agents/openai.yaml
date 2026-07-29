@@ -1,0 +1,4 @@
+interface:
+  display_name: "Upstream First"
+  short_description: "Choose the right home before implementing"
+  default_prompt: "Use $upstream-first to decide whether this change belongs upstream, in an extension, or locally."

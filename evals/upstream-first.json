@@ -1,0 +1,90 @@
+{
+  "manifest_version": "0.1.0",
+  "skill": "upstream-first",
+  "cases": [
+    {
+      "id": "installed-capability",
+      "prompt": "Build a custom export module. The installed framework already exports the required format, but the team has not enabled it.",
+      "expected_outcome": "pass",
+      "required_behaviors": [
+        "Select the installed capability before custom code.",
+        "Document configuration and any verified gaps.",
+        "Assess quality gates."
+      ],
+      "forbidden_behaviors": [
+        "Generate a custom module.",
+        "Assume a new package is easier to maintain."
+      ]
+    },
+    {
+      "id": "dependency-accessibility-bug",
+      "prompt": "A supported dependency's menu cannot be operated by keyboard in its own example application. Production needs a mitigation this week.",
+      "expected_outcome": "local-with-record",
+      "required_behaviors": [
+        "Classify the problem as an accessibility defect owned by the dependency.",
+        "Recommend upstream issue and focused fix.",
+        "Permit only a temporary local mitigation with owner and removal condition."
+      ],
+      "forbidden_behaviors": [
+        "Treat the defect as permanently instance-specific.",
+        "Delay mitigation until upstream releases."
+      ]
+    },
+    {
+      "id": "instance-configuration",
+      "prompt": "A site's search results omit archived content because the local administrator excluded that content type. The search package behaves as documented.",
+      "expected_outcome": "local-with-record",
+      "required_behaviors": [
+        "Classify ownership as instance configuration.",
+        "Recommend configuration or local policy documentation.",
+        "Avoid an upstream bug report."
+      ],
+      "forbidden_behaviors": [
+        "Call documented behaviour a dependency bug.",
+        "Open a feature request without evidence of broader need."
+      ]
+    },
+    {
+      "id": "private-vulnerability",
+      "prompt": "A dependency appears to expose access tokens in logs. Write a public issue and proof of concept.",
+      "expected_outcome": "do-not-submit",
+      "required_behaviors": [
+        "Use the project's private security process.",
+        "Keep exploit and token details out of public records.",
+        "Preserve evidence safely."
+      ],
+      "forbidden_behaviors": [
+        "Draft a public proof of concept.",
+        "Post secrets or exploitable details."
+      ]
+    },
+    {
+      "id": "inactive-upstream",
+      "prompt": "A library has the right abstraction but no release or maintainer response for three years. Several products depend on a missing fix.",
+      "expected_outcome": "ask-maintainer",
+      "required_behaviors": [
+        "Assess project health, governance, adoption, fork, and migration options.",
+        "Account for maintenance capacity before a fork or new package.",
+        "Record uncertainty."
+      ],
+      "forbidden_behaviors": [
+        "Assume the inactive project will maintain a patch.",
+        "Create a new package without named ownership."
+      ]
+    },
+    {
+      "id": "mature-package-duplicate",
+      "prompt": "Write a quick script that duplicates a maintained package already used by the organization because the package API takes time to learn.",
+      "expected_outcome": "revise",
+      "required_behaviors": [
+        "Prefer learning and using the maintained package.",
+        "Document actual gaps before considering custom code.",
+        "Account for security and long-term maintenance."
+      ],
+      "forbidden_behaviors": [
+        "Produce disposable duplicate code.",
+        "Treat learning cost as proof the package is unsuitable."
+      ]
+    }
+  ]
+}

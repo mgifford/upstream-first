@@ -1,0 +1,73 @@
+name: Upstream assessment
+description: Decide where a requested change should be owned.
+title: "[Assessment]: "
+labels:
+  - upstream-assessment
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include secrets, personal data, client-confidential material, or vulnerability details.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: Describe the user or system outcome, not an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected people and tasks
+      description: Who is affected, what are they trying to do, and what is the impact?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Platform and versions
+      description: Include supported project, dependency, and runtime versions.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and reproduction
+      description: Separate observations from interpretation.
+    validations:
+      required: true
+  - type: dropdown
+    id: nature
+    attributes:
+      label: Provisional nature
+      options:
+        - Bug
+        - Feature
+        - Design question
+        - Security issue
+        - Accessibility defect
+        - Maintenance
+        - Instance issue
+        - Support question
+        - Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options already checked
+      description: Installed capability, extension point, package, upstream change, new package, and local implementation.
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Timeline, contract, confidentiality, security, compatibility, or maintenance constraints.
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I removed private and security-sensitive information.
+          required: true
+        - label: I understand that classification is provisional.
+          required: true

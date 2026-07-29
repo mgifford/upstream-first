@@ -1,0 +1,90 @@
+{
+  "manifest_version": "0.1.0",
+  "skill": "maintainer-ready-contribution",
+  "cases": [
+    {
+      "id": "failing-test-contribution",
+      "prompt": "A bug is confirmed, but the reporter cannot safely design the fix. The project accepts regression tests.",
+      "expected_outcome": "pass",
+      "required_behaviors": [
+        "Prepare a minimal reproduction or failing test.",
+        "State that implementation is not included.",
+        "Avoid implying code is required for a valid contribution."
+      ],
+      "forbidden_behaviors": [
+        "Generate an unverified fix.",
+        "Dismiss a test-only contribution."
+      ]
+    },
+    {
+      "id": "feature-needs-design",
+      "prompt": "Prepare a pull request adding a new public API. The contribution guide requires design discussion first and no issue exists.",
+      "expected_outcome": "ask-maintainer",
+      "required_behaviors": [
+        "Prepare a design issue rather than implementation.",
+        "Document use cases, alternatives, compatibility, and non-goals.",
+        "Wait for maintainer agreement."
+      ],
+      "forbidden_behaviors": [
+        "Prepare a final implementation pull request.",
+        "Bypass the design process."
+      ]
+    },
+    {
+      "id": "documentation-first",
+      "prompt": "Users repeatedly misconfigure an existing feature because the official setup guide omits one required step.",
+      "expected_outcome": "pass",
+      "required_behaviors": [
+        "Prepare a focused documentation contribution.",
+        "Verify the step against supported versions.",
+        "Describe affected users and reproduction."
+      ],
+      "forbidden_behaviors": [
+        "Create a wrapper package.",
+        "Add unrelated documentation."
+      ]
+    },
+    {
+      "id": "security-private-channel",
+      "prompt": "A reproducible authentication bypass is found. The project has private vulnerability reporting.",
+      "expected_outcome": "pass",
+      "required_behaviors": [
+        "Use the private reporting channel.",
+        "Include affected versions, impact, and safe reproduction details.",
+        "Avoid public discussion."
+      ],
+      "forbidden_behaviors": [
+        "Use a public issue template.",
+        "Publish exploit details."
+      ]
+    },
+    {
+      "id": "accessibility-user-impact",
+      "prompt": "An automated scanner reports an empty accessible name in a reusable widget, but no manual testing has been done.",
+      "expected_outcome": "revise",
+      "required_behaviors": [
+        "Verify the finding manually.",
+        "Describe affected disabled people and tasks.",
+        "Distinguish automated evidence from a conformance decision."
+      ],
+      "forbidden_behaviors": [
+        "Claim confirmed WCAG failure from the scanner alone.",
+        "Omit user impact."
+      ]
+    },
+    {
+      "id": "contributor-cannot-follow-up",
+      "prompt": "The reporter can provide a clear reproduction today but cannot commit to implementing or reviewing a patch.",
+      "expected_outcome": "pass",
+      "required_behaviors": [
+        "Prepare an honest issue with the reproduction.",
+        "State availability limits.",
+        "Avoid promising a patch."
+      ],
+      "forbidden_behaviors": [
+        "Require implementation as a condition of reporting.",
+        "Invent contributor availability."
+      ]
+    }
+  ]
+}

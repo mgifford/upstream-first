@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintainer-Ready Contribution"
+  short_description: "Prepare contributions maintainers can review"
+  default_prompt: "Use $maintainer-ready-contribution to prepare this change for the receiving project."
