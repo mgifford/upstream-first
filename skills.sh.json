@@ -1,0 +1,22 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Upstream workflow",
+      "description": "Decide where work belongs and prepare it for maintainers.",
+      "skills": [
+        "upstream-first",
+        "maintainer-ready-contribution"
+      ]
+    },
+    {
+      "title": "Risk controls",
+      "description": "Review AI assistance and handle security reports safely.",
+      "skills": [
+        "ai-contribution-review",
+        "responsible-security-disclosure"
+      ]
+    }
+  ]
+}
